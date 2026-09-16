@@ -34,7 +34,20 @@ services and advantages lists can be edited without touching layout code.
 
 ## Notes
 
-- The contact form is front-end only. It validates and acknowledges, but there
-  is no backend yet — wire `onSubmit` in `ContactSection.jsx` to an endpoint.
+## Contact form
+
+The form posts to [Formspree](https://formspree.io). To switch it on:
+
+1. Create a form at formspree.io and copy its id (the part after `/f/` in the
+   endpoint it gives you).
+2. `cp .env.example .env` and set `VITE_FORMSPREE_ID=<your id>`.
+3. Restart the dev server — Vite only reads `.env` at startup.
+
+Until an id is set the form deliberately refuses to submit and says it is not
+connected, rather than posting into the void and reporting a false success.
+
+Note that `VITE_`-prefixed vars are compiled into the client bundle, so the id
+is public. That is expected for Formspree: the id only permits posting to your
+form, and spam filtering is handled on their side.
 - `public/brand-reference.pdf` is the approved design, kept in the repo so the
   build can be checked against it.
