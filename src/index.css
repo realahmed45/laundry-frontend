@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans text-ink antialiased; }
+}
+
+@layer components {
+  /* The small uppercase label that sits above every section heading. */
+  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-blue/70; }
+  .section-title { @apply text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-tight text-brand-deep; }
+  .shell { @apply mx-auto w-full max-w-content px-6 sm:px-8; }
+}
+
+/* The hero's soft watercolour wash, built from the logo's own blues/greens. */
+.hero-wash {
+  background:
+    radial-gradient(60% 70% at 8% 18%, rgba(63,175,70,.20) 0%, transparent 60%),
+    radial-gradient(55% 65% at 92% 12%, rgba(27,142,242,.28) 0%, transparent 62%),
+    radial-gradient(70% 60% at 75% 92%, rgba(63,175,70,.16) 0%, transparent 60%),
+    radial-gradient(60% 60% at 20% 88%, rgba(27,142,242,.18) 0%, transparent 60%),
+    #ffffff;
+}
