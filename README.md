@@ -51,3 +51,21 @@ is public. That is expected for Formspree: the id only permits posting to your
 form, and spam filtering is handled on their side.
 - `public/brand-reference.pdf` is the approved design, kept in the repo so the
   build can be checked against it.
+
+## Deploying to Vercel
+
+Import the repo, then set one environment variable:
+
+| Name | Value | Environments |
+|---|---|---|
+| `VITE_FORMSPREE_ID` | `movavgrb` | Production, Preview, Development |
+
+Build settings are detected automatically (Vite → `npm run build` → `dist`).
+
+Two things to know:
+
+- Vite reads `VITE_*` vars **at build time**, not runtime. Changing the value in
+  Vercel requires a redeploy to take effect.
+- `vercel.json` rewrites all paths to `index.html`. Without it, React Router's
+  `/profile` and `/contact` return 404 on a hard refresh or a shared link,
+  because no such file exists on disk.
