@@ -45,7 +45,9 @@ export default function Home() {
       </section>
 
       {/* ---------- ABOUT ---------- */}
-      <section className="py-24">
+      {/* scroll-mt clears the floating navbar, which would otherwise cover the
+          heading when this section is jumped to. */}
+      <section id="about" className="scroll-mt-24 py-24">
         <div className="shell grid gap-10 sm:grid-cols-[minmax(0,260px)_1fr] sm:gap-16">
           <div>
             <p className="eyebrow">About us</p>

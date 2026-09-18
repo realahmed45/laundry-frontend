@@ -29,7 +29,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="pb-24">
+    <section id="contact" className="scroll-mt-24 pb-24">
       <div className="shell grid items-start gap-12 sm:grid-cols-2 sm:gap-20">
         <div className="sm:pt-16">
           <p className="eyebrow">Contact us</p>
